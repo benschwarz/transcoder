@@ -12,6 +12,9 @@ begin
     gem.authors = ["Ben Schwarz"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
     gem.add_dependency "registry", ">= 0.1.2"
+    gem.add_dependency "json"
+    gem.add_dependency "crack"
+    gem.add_dependency "simple-rss"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
