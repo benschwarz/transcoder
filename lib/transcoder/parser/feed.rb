@@ -1,4 +1,4 @@
-require "simple-rss"
+autoload :SimpleRSS, "simple-rss"
 
 module Transcoder
   class Feed < Parser
@@ -6,7 +6,7 @@ module Transcoder
                "application/rss+xml"
   
     def self.parse(raw)
-      ::SimpleRSS.parse(raw)
+      SimpleRSS.parse(raw)
     end
   end
 end

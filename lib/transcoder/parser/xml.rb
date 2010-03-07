@@ -1,4 +1,4 @@
-require "crack"
+autoload :Crack, "crack"
 
 module Transcoder
   class XML < Parser
@@ -6,7 +6,7 @@ module Transcoder
                "application/xml"
              
     def self.parse(raw)
-      ::Crack::XML.parse(raw)
+      Crack::XML.parse(raw)
     end
   end
 end

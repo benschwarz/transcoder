@@ -1,4 +1,4 @@
-require "json"
+autoload :JSON, "json"
 
 module Transcoder
   class Json < Parser
@@ -9,7 +9,7 @@ module Transcoder
                "text/x-json"
                
     def self.parse(raw)
-      ::JSON.parse(raw)
+      JSON.parse(raw)
     end
   end
 end
