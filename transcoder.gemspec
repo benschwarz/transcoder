@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{transcoder}
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ben Schwarz"]
-  s.date = %q{2010-03-07}
+  s.date = %q{2010-03-08}
   s.description = %q{Transcode from json, xml or atom/rss feeds to Ruby.}
   s.email = %q{ben.schwarz@gmail.com}
   s.extra_rdoc_files = [
@@ -19,17 +19,25 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
      ".gitignore",
+     "CHANGES",
      "LICENSE",
      "README.md",
      "Rakefile",
      "VERSION",
+     "lib/core_ext/autoload.rb",
      "lib/transcoder.rb",
      "lib/transcoder/parser/feed.rb",
      "lib/transcoder/parser/json.rb",
      "lib/transcoder/parser/xml.rb",
+     "lib/transcoder/parser/yaml.rb",
+     "spec/parser/feed_spec.rb",
+     "spec/parser/json_spec.rb",
+     "spec/parser/xml_spec.rb",
+     "spec/parser/yaml_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb",
-     "spec/transcoder_spec.rb"
+     "spec/transcoder_spec.rb",
+     "transcoder.gemspec"
   ]
   s.homepage = %q{http://github.com/benschwarz/transcoder}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -37,7 +45,11 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.6}
   s.summary = %q{Transcode from common web based formats into plain old Ruby.}
   s.test_files = [
-    "spec/spec_helper.rb",
+    "spec/parser/feed_spec.rb",
+     "spec/parser/json_spec.rb",
+     "spec/parser/xml_spec.rb",
+     "spec/parser/yaml_spec.rb",
+     "spec/spec_helper.rb",
      "spec/transcoder_spec.rb"
   ]
 
@@ -47,14 +59,14 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<rspec>, [">= 1.2.9"])
-      s.add_development_dependency(%q<restclient>, [">= 0"])
+      s.add_development_dependency(%q<rest-client>, [">= 0"])
       s.add_runtime_dependency(%q<registry>, [">= 0.1.2"])
       s.add_runtime_dependency(%q<json>, [">= 0"])
       s.add_runtime_dependency(%q<crack>, [">= 0"])
       s.add_runtime_dependency(%q<simple-rss>, [">= 0"])
     else
       s.add_dependency(%q<rspec>, [">= 1.2.9"])
-      s.add_dependency(%q<restclient>, [">= 0"])
+      s.add_dependency(%q<rest-client>, [">= 0"])
       s.add_dependency(%q<registry>, [">= 0.1.2"])
       s.add_dependency(%q<json>, [">= 0"])
       s.add_dependency(%q<crack>, [">= 0"])
@@ -62,7 +74,7 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<rspec>, [">= 1.2.9"])
-    s.add_dependency(%q<restclient>, [">= 0"])
+    s.add_dependency(%q<rest-client>, [">= 0"])
     s.add_dependency(%q<registry>, [">= 0.1.2"])
     s.add_dependency(%q<json>, [">= 0"])
     s.add_dependency(%q<crack>, [">= 0"])
