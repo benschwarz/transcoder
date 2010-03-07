@@ -1,0 +1,7 @@
+= 0.2.0
+  * Added Transcoder.for method for a shorter version of Transcoder::Parser.for
+  * Added Yaml parser
+  * Switched all parsers to use autoload for their associated library dependencies (http://gist.github.com/324367)
+
+= 0.1.0 (06/02/2010)
+  *  Initial release
