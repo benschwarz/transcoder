@@ -21,6 +21,12 @@ Say you'd pulled an API based resource using `rest-client`
     
 What you'll get back is a Ruby object. Lovley.
 
+## Supported formats
+
+* Json
+* XML
+* RSS / Atom
+
 ## Future thoughts
 
 * Add something to cast attributes to a native ruby object, eg - if its key is created_at, try to date parse it.
