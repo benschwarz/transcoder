@@ -21,7 +21,7 @@ Say you'd pulled an API based resource using `rest-client`
     
     >> rc = RestClient.get('http://vimeo.com/api/v2/benschwarz/likes.json')
     
-    >> Transcoder::Parser.for(rc.headers[:content_type]).parse(rc.to_s)
+    >> Transcoder.for(rc.headers[:content_type]).parse(rc.to_s)
     
 What you'll get back is a Ruby object. Lovley.
 
@@ -30,6 +30,11 @@ What you'll get back is a Ruby object. Lovley.
 * Json
 * XML
 * RSS / Atom
+
+### Note about RSS / Atom
+
+Transcoder will return a SimpleRSS object rather than a straight up Ruby hash, this shouldn't be (much) of a reason for concern.
+This simply means that you'll want to call the properties of the returned object with method calls rather than hash access.
 
 ## Future thoughts
 
