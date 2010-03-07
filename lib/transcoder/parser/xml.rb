@@ -1,4 +1,4 @@
-autoload :Crack, "crack"
+require "crack"
 
 module Transcoder
   class XML < Parser

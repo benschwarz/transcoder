@@ -1,4 +1,4 @@
-autoload :SimpleRSS, "simple-rss"
+require "simple-rss"
 
 module Transcoder
   class Feed < Parser
