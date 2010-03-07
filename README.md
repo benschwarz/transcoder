@@ -8,6 +8,10 @@ Say you'd pulled an API based resource using `rest-client`
   * All that you wanted was a ruby object.
   * You don't want to know anything about the format that the API uses. 
   * You're pretty sure its something pretty common.
+  
+## Install
+
+    gem install transcoder
 
 ## Example
     $ irb -rubygems
