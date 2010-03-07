@@ -11,7 +11,7 @@ begin
     gem.homepage = "http://github.com/benschwarz/transcoder"
     gem.authors = ["Ben Schwarz"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
-    gem.add_development_dependency "restclient"
+    gem.add_development_dependency "rest-client"
     gem.add_dependency "registry", ">= 0.1.2"
     gem.add_dependency "json"
     gem.add_dependency "crack"
