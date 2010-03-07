@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "transcoder"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Transcode from common web based formats into plain old Ruby.}
+    gem.description = %Q{Transcode from json, xml or atom/rss feeds to Ruby.}
     gem.email = "ben.schwarz@gmail.com"
     gem.homepage = "http://github.com/benschwarz/transcoder"
     gem.authors = ["Ben Schwarz"]
