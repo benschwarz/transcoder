@@ -12,13 +12,9 @@ module Transcoder
   end
 end
 
-# Autoload that works with Rubygems, 
-# rather than from the current $LOAD_PATH only
-require 'core_ext/autoload'
+$LOAD_PATH << File.dirname(__FILE__) + "/transcoder/parser"
 
-$LOAD_PATH << File.dirname(__FILE__)
-
-require 'transcoder/parser/json'
-require 'transcoder/parser/xml'
-require 'transcoder/parser/feed'
-require 'transcoder/parser/yaml'
+require 'json/identifier'
+require 'xml/identifier'
+require 'feed/identifier'
+require 'yaml/identifier'

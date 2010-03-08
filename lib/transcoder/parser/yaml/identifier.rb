@@ -1,3 +1,4 @@
+# Autoload is fine, its apart of ruby-core.
 autoload :YAML, "yaml"
 
 module Transcoder
