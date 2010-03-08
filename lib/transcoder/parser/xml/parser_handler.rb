@@ -1,5 +1,5 @@
 require 'crack'
 
 class Transcoder::XML
-  Handler = Crack::XML
+  ParserHandler = Crack::XML
 end
