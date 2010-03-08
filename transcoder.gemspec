@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{transcoder}
-  s.version = "0.2.0"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ben Schwarz"]
@@ -24,12 +24,14 @@ Gem::Specification.new do |s|
      "README.md",
      "Rakefile",
      "VERSION",
-     "lib/core_ext/autoload.rb",
      "lib/transcoder.rb",
-     "lib/transcoder/parser/feed.rb",
-     "lib/transcoder/parser/json.rb",
-     "lib/transcoder/parser/xml.rb",
-     "lib/transcoder/parser/yaml.rb",
+     "lib/transcoder/parser/feed/handler.rb",
+     "lib/transcoder/parser/feed/identifier.rb",
+     "lib/transcoder/parser/json/handler.rb",
+     "lib/transcoder/parser/json/identifier.rb",
+     "lib/transcoder/parser/xml/handler.rb",
+     "lib/transcoder/parser/xml/identifier.rb",
+     "lib/transcoder/parser/yaml/identifier.rb",
      "spec/parser/feed_spec.rb",
      "spec/parser/json_spec.rb",
      "spec/parser/xml_spec.rb",
