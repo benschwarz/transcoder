@@ -8,6 +8,10 @@ module Transcoder
                
     autoload :Handler, "json/handler"
     
+    def self.generate(objects)
+      Json::Handler.generate(objects)
+    end
+    
     def self.parse(raw)
       Json::Handler.parse(raw)
     end

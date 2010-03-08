@@ -8,6 +8,10 @@ module Transcoder
                "application/yaml",
                "application/x-yaml"
     
+    def self.generate(objects)
+      YAML.dump(objects)
+    end
+    
     def self.parse(raw)
       YAML.load(raw)
     end

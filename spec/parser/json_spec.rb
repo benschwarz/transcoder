@@ -4,4 +4,8 @@ describe Transcoder::Json do
   it "should parse the json and return a ruby object" do
     Transcoder.for("application/json").parse('{"key": "value"}').should == {"key" => "value"}
   end
+  
+  it "should generate json from a ruby object" do
+    Transcoder.for("application/json").generate({:key => "value"}).should == "{\"key\":\"value\"}"
+  end
 end
