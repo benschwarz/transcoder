@@ -33,4 +33,8 @@ describe Transcoder::Feed do
     
     Transcoder.for("application/atom+xml").parse(atom).should be_an_instance_of(SimpleRSS)
   end
+  
+  it "should raise NotImplemented from a ruby object" do
+    lambda { Transcoder.for("application/atom+xml").generate({:key => "value"}) }.should raise_error("NotImplemented")
+  end
 end
