@@ -16,6 +16,7 @@ begin
     gem.add_dependency "json"
     gem.add_dependency "crack"
     gem.add_dependency "simple-rss"
+    gem.add_dependency "nokogiri"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
