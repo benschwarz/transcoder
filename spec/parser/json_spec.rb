@@ -5,7 +5,26 @@ describe Transcoder::Json do
     Transcoder.for("application/json").parse('{"key": "value"}').should == {"key" => "value"}
   end
   
-  it "should generate json from a ruby object" do
-    Transcoder.for("application/json").generate({:key => "value"}).should == "{\"key\":\"value\"}"
+  
+  describe "generate" do
+    it "json from a ruby object" do
+      Transcoder.for("json").generate({:key => "value"}).should == "{\"key\":\"value\"}"
+    end
+    
+    it "should accept an array" do
+      lambda { Transcoder.for("json").generate([1, 2, 3]) }.should_not raise_error
+    end
+    
+    it "should accept a hash" do
+      lambda { Transcoder.for("json").generate({:key => "value"}) }.should_not raise_error
+    end
+    
+    it "should not accept a string" do
+      lambda { Transcoder.for("json").generate("value") }.should raise_error
+    end
+    
+    it "should not accept an object" do
+      lambda { Transcoder.for("json").generate(Object.new) }.should raise_error
+    end
   end
 end
