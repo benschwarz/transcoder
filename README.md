@@ -37,6 +37,12 @@ You have a Ruby array or a hash and you want to pack it up and post it off somew
     
     >> require 'transcoder'
     
+    >> Transcoder.for(:xml).generate({:title => "Hamlyn's Guide to Sauces and Saucemaking"})
+    => "<?xml version=\"1.0\"?>\n<items>\n  <item>\n    <title>Hamlyn's Guide to Sauces and Saucemaking</title>\n  </item>\n</items>\n"
+    
+    >> Transcoder.for(:yaml).generate({:title => "Hamlyn's Guide to Sauces and Saucemaking"})
+    => "--- \n:title: Hamlyn's Guide to Sauces and Saucemaking\n"
+    
 
 ## Supported formats
 
@@ -59,7 +65,7 @@ You have a Ruby array or a hash and you want to pack it up and post it off somew
 ## Future thoughts
 
 * Add something to cast attributes to a native ruby object, eg - if its key is `created_at`, try to date parse it.
-
+* Generator methods to unpack and generate object trees (XML generator)
 
 ## Note on Patches/Pull Requests
  
