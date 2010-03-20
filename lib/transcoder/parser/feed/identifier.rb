@@ -1,6 +1,8 @@
 module Transcoder
   class Feed < Parser
-    identifier "application/atom+xml",
+    identifier "atom",
+               "rss",
+               "application/atom+xml",
                "application/rss+xml"
     
     autoload :Handler, "feed/handler"
