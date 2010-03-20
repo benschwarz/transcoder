@@ -14,18 +14,14 @@ module Transcoder
           if object.is_a? Array
             object.each{|item| xml.item(:value => item) }
           elsif object.is_a? Hash
+            # stringify all the keys
+            object.each {|key, value| object[key.to_s] = object.delete(key) }
+            
             xml.item {
               object.each do |key, value|
-                # stringify the keys
-                object[key.to_s] = object.delete(key)
-                key = key.to_s
-                
                 # id, type, class and fork must be appended with _
-                if key =~ /(id|type|class|fork)/
-                  object["#{key}_"] = object.delete(key)
-                  key = "#{key}_"
-                end
-              
+                key = "#{key}_" if key =~ /(id|type|class|fork)/
+                
                 xml.send(key, value)
               end
             }
