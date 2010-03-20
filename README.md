@@ -1,19 +1,16 @@
 # transcoder
 
-Transcode from common web based formats into plain old Ruby.
+Transcode between common web formats and Ruby. 
 
-## Scenario
+## Scenario (Web->Ruby)
 Say you'd pulled an API based resource using `rest-client`
   
   * All that you wanted was a ruby object.
-  * You don't want to know anything about the format that the API uses. 
+  * You don't want to know anything about the format that the API serves. 
   * You're pretty sure its something pretty common.
   
-## Install
 
-    gem install transcoder
-
-## Example
+## Example (Web->Ruby)
     $ irb -rubygems
     
     >> require 'restclient'
@@ -25,20 +22,43 @@ Say you'd pulled an API based resource using `rest-client`
     
 What you'll get back is a Ruby object. Lovley.
 
+## Scenario (Ruby→Web)
+
+You have a Ruby array or a hash and you want to pack it up and post it off somewhere else
+
+  * You have a target (content|mime)-type in mind 
+    
+    or
+    
+  * You have a named format eg: "json"
+
+## Example (Ruby→Web)
+    $ irb -rubygems
+    
+    >> require 'transcoder'
+    
+
 ## Supported formats
 
 * Json
 * XML
 * RSS / Atom
+* Yaml
 
-### Note about RSS / Atom
+## Install
 
-Transcoder will return a SimpleRSS object rather than a straight up Ruby hash, this shouldn't be (much) of a reason for concern.
-This simply means that you'll want to call the properties of the returned object with method calls rather than hash access.
+    gem install transcoder
+
+### Notes about RSS / Atom parsing and generation
+
+* Transcoder will return a SimpleRSS object rather than a straight up Ruby hash, this shouldn't be (much) of a reason for concern.
+  
+  This simply means that you'll want to call the properties of the returned object with method calls rather than hash access.
+* There is no 'generate' method for feeds. This is simply because they require much more information than a raw feed.
 
 ## Future thoughts
 
-* Add something to cast attributes to a native ruby object, eg - if its key is created_at, try to date parse it.
+* Add something to cast attributes to a native ruby object, eg - if its key is `created_at`, try to date parse it.
 
 
 ## Note on Patches/Pull Requests
