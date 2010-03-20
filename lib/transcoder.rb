@@ -4,6 +4,8 @@ module Transcoder
   VERSION = File.read(File.join(File.dirname(__FILE__), "..", "VERSION"))
   
   class Parser
+    class TypeError < StandardError; end
+    
     extend Registry
   end
   
