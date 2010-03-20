@@ -1,4 +1,10 @@
-= 0.2.0
+= 0.4.0 (10/02/2010)
+  * Added ability to transcode from a ruby hash or array to: json, yaml or xml
+
+= 0.3.0 (08/02/2010)
+  * Re-factored autoloading (http://www.germanforblack.com/articles/ruby-autoload)
+  
+= 0.2.0 (08/02/2010)
   * Added Transcoder.for method for a shorter version of Transcoder::Parser.for
   * Added Yaml parser
   * Switched all parsers to use autoload for their associated library dependencies (http://gist.github.com/324367)
