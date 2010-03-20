@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{transcoder}
-  s.version = "0.3.0"
+  s.version = "0.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ben Schwarz"]
-  s.date = %q{2010-03-08}
+  s.date = %q{2010-03-21}
   s.description = %q{Transcode from json, xml or atom/rss feeds to Ruby.}
   s.email = %q{ben.schwarz@gmail.com}
   s.extra_rdoc_files = [
@@ -29,8 +29,9 @@ Gem::Specification.new do |s|
      "lib/transcoder/parser/feed/identifier.rb",
      "lib/transcoder/parser/json/handler.rb",
      "lib/transcoder/parser/json/identifier.rb",
-     "lib/transcoder/parser/xml/handler.rb",
+     "lib/transcoder/parser/xml/generator_handler.rb",
      "lib/transcoder/parser/xml/identifier.rb",
+     "lib/transcoder/parser/xml/parser_handler.rb",
      "lib/transcoder/parser/yaml/identifier.rb",
      "spec/parser/feed_spec.rb",
      "spec/parser/json_spec.rb",
@@ -66,6 +67,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<json>, [">= 0"])
       s.add_runtime_dependency(%q<crack>, [">= 0"])
       s.add_runtime_dependency(%q<simple-rss>, [">= 0"])
+      s.add_runtime_dependency(%q<nokogiri>, [">= 0"])
     else
       s.add_dependency(%q<rspec>, [">= 1.2.9"])
       s.add_dependency(%q<rest-client>, [">= 0"])
@@ -73,6 +75,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<json>, [">= 0"])
       s.add_dependency(%q<crack>, [">= 0"])
       s.add_dependency(%q<simple-rss>, [">= 0"])
+      s.add_dependency(%q<nokogiri>, [">= 0"])
     end
   else
     s.add_dependency(%q<rspec>, [">= 1.2.9"])
@@ -81,6 +84,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<json>, [">= 0"])
     s.add_dependency(%q<crack>, [">= 0"])
     s.add_dependency(%q<simple-rss>, [">= 0"])
+    s.add_dependency(%q<nokogiri>, [">= 0"])
   end
 end
 
