@@ -12,6 +12,10 @@ module Transcoder
   def self.for(mime)
     Parser.for(mime)
   end
+  
+  def self.register(mime, klass)
+    klass.send(:identifier, mime)
+  end
 end
 
 $LOAD_PATH << File.dirname(__FILE__) + "/transcoder/parser"

@@ -6,6 +6,12 @@ describe "Transcoder" do
     Transcoder.for("application/json")
   end
   
+  it "should register a given kind to a parser" do
+    lambda { Transcoder.for("foo/bar") }.should raise_error(Registry::NotRegistered)
+    Transcoder.register("foo/bar", Transcoder::Json)
+    Transcoder.for("foo/bar").should == Transcoder::Json
+  end
+  
   describe "mime-types" do
     it "should parse json" do
       Transcoder.for('application/json').should == Transcoder::Json
